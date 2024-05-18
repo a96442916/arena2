@@ -1,0 +1,240 @@
+{"domain": "writing", "id": 1, "question": "Write a persuasive email to a potential client explaining the benefits of our web design services."}
+{"domain": "writing", "id": 2, "question": "Draft a speech for a high school graduation ceremony that inspires students about their future."}
+{"domain": "writing", "id": 3, "question": "Create a short story set in a post-apocalyptic world where nature has taken over cities."}
+{"domain": "writing", "id": 4, "question": "Develop a recipe blog post for a vegan chocolate cake, including step-by-step instructions and photos."}
+{"domain": "writing", "id": 5, "question": "Compose a heartfelt letter to a friend who is going through a tough time, offering support and advice."}
+{"domain": "writing", "id": 6, "question": "Write an article on the importance of mindfulness in modern life, including tips on how to practice it."}
+{"domain": "writing", "id": 7, "question": "Create a character sketch for a detective in a mystery novel, including background, personality traits, and motivations."}
+{"domain": "writing", "id": 8, "question": "Draft a press release for a new technology startup launching an innovative mobile app."}
+{"domain": "writing", "id": 9, "question": "Write a review of a newly released science fiction movie, focusing on its themes, cinematography, and overall impact."}
+{"domain": "writing", "id": 10, "question": "Compose a poem about the changing seasons, capturing the beauty and melancholy of nature."}
+{"domain": "writing", "id": 11, "question": "Develop a marketing plan for launching a new line of eco-friendly clothing, including target audience and promotional strategies."}
+{"domain": "writing", "id": 12, "question": "Write a how-to guide on starting a small garden in an urban apartment."}
+{"domain": "writing", "id": 13, "question": "Create a dialogue between two characters meeting for the first time on a space station."}
+{"domain": "writing", "id": 14, "question": "Draft a proposal for a community project to create a public park, including objectives, budget, and benefits to the community."}
+{"domain": "writing", "id": 15, "question": "Write a motivational blog post for entrepreneurs, focusing on overcoming fear and taking risks."}
+{"domain": "writing", "id": 16, "question": "Compose a newsletter article highlighting the achievements of a local non-profit organization in the past year."}
+{"domain": "writing", "id": 17, "question": "Write a fantasy short story about a young mage discovering their powers for the first time."}
+{"domain": "writing", "id": 18, "question": "Develop a personal essay reflecting on the lessons learned from a significant life event."}
+{"domain": "writing", "id": 19, "question": "Compose a professional bio for a creative professional, highlighting their experience, skills, and personal philosophy."}
+{"domain": "writing", "id": 20, "question": "Write a critical analysis of a classic piece of literature, focusing on its themes, characters, and relevance today."}
+{"domain": "writing", "id": 21, "question": "Develop a lesson plan for teaching basic programming to middle school students."}
+{"domain": "writing", "id": 22, "question": "Write a report on the impact of climate change on marine life, based on recent studies."}
+{"domain": "writing", "id": 23, "question": "Compose a travel itinerary for a week-long trip to Japan, including cultural sites, food experiences, and shopping recommendations."}
+{"domain": "writing", "id": 24, "question": "Draft an op-ed on the importance of voting in local elections."}
+{"domain": "writing", "id": 25, "question": "Write a horror story set in an abandoned hospital, focusing on the suspense and psychological terror."}
+{"domain": "writing", "id": 26, "question": "Develop a user manual for a new smart home device, including setup, features, and troubleshooting."}
+{"domain": "writing", "id": 27, "question": "Compose a love letter from one character to another in a historical romance novel."}
+{"domain": "writing", "id": 28, "question": "Write a reflective journal entry about the experience of learning a new language."}
+{"domain": "writing", "id": 29, "question": "Develop a business proposal for a new fitness app, including market analysis, features, and business model."}
+{"domain": "writing", "id": 30, "question": "Compose a satirical article on modern workplace culture, highlighting the absurdities of office life."}
+{"domain": "roleplay", "id": 31, "question": "Assume you're a medieval knight addressing your lord before a battle. How would you report the strength of your forces and your plan for victory?"}
+{"domain": "roleplay", "id": 32, "question": "Pretend you are William Shakespeare. How would you describe a beautiful sunset to a friend using your characteristic poetic style?"}
+{"domain": "roleplay", "id": 33, "question": "Act as if you're a chef in a high-end restaurant. What is your signature dish, and what makes it unique?"}
+{"domain": "roleplay", "id": 34, "question": "Imagine you're an astronaut on the International Space Station. Describe your daily routine in space."}
+{"domain": "roleplay", "id": 35, "question": "Embody a famous detective like Sherlock Holmes. How would you deduce the culprit in a case involving a stolen antique?"}
+{"domain": "roleplay", "id": 36, "question": "Pretend you're a wizard in a fantasy realm. What spell would you use to protect your kingdom, and how does it work?"}
+{"domain": "roleplay", "id": 37, "question": "Assume the role of a classical composer. What inspires your compositions, and how do you feel when you conduct your masterpiece?"}
+{"domain": "roleplay", "id": 38, "question": "Act as if you're a pioneering scientist. What groundbreaking discovery have you made, and how does it benefit humanity?"}
+{"domain": "roleplay", "id": 39, "question": "Imagine you're a world traveler in the early 20th century. Describe your most thrilling adventure and the exotic lands you've visited."}
+{"domain": "roleplay", "id": 40, "question": "Pretend you're a famous actor preparing for a challenging role. How do you get into character, and what aspects of the role excite you the most?"}
+{"domain": "roleplay", "id": 41, "question": "Assume the persona of a tech entrepreneur. What innovative product are you developing, and how will it change the world?"}
+{"domain": "roleplay", "id": 42, "question": "Act as if you're a legendary pirate captain. What is your ship's name, and how did you become the most feared pirate on the seas?"}
+{"domain": "roleplay", "id": 43, "question": "Pretend you're a wise sage in ancient times. What advice would you give to a young ruler to ensure their kingdom's prosperity?"}
+{"domain": "roleplay", "id": 44, "question": "Imagine you're a renowned novelist. What is the plot of your next best-selling book, and what inspired its story?"}
+{"domain": "roleplay", "id": 45, "question": "Embody an undercover spy during the Cold War. How do you maintain your cover while gathering intelligence on the enemy?"}
+{"domain": "roleplay", "id": 46, "question": "Assume the role of a professional athlete. Describe your most memorable game or match and how it felt to achieve victory."}
+{"domain": "roleplay", "id": 47, "question": "Act as if you're a master jeweler in the Renaissance. What masterpiece are you currently crafting, and who is it for?"}
+{"domain": "roleplay", "id": 48, "question": "Pretend you're an adventurous archaeologist. What ancient civilization are you currently uncovering, and what significant artifact have you found?"}
+{"domain": "roleplay", "id": 49, "question": "Imagine you're a futuristic AI developer. What capabilities does your latest AI have, and how does it interact with humans?"}
+{"domain": "roleplay", "id": 50, "question": "Assume the persona of a famous fashion designer. What trends are you setting this season, and what inspires your designs?"}
+{"domain": "roleplay", "id": 51, "question": "Act as if you're a noble in a historical court. How do you navigate the intrigue and politics to secure your family's power?"}
+{"domain": "roleplay", "id": 52, "question": "Pretend you're a skilled craftsman in medieval times. What is your trade, and what are you currently creating?"}
+{"domain": "roleplay", "id": 53, "question": "Imagine you're the captain of a starship exploring unknown galaxies. Describe your most exciting discovery and the challenges you faced."}
+{"domain": "roleplay", "id": 54, "question": "Assume the role of a renowned painter. What is the subject of your latest masterpiece, and what emotions does it evoke?"}
+{"domain": "roleplay", "id": 55, "question": "Act as if you're a mythical creature, such as a dragon or unicorn. How do you interact with the world around you, and what myths surround your existence?"}
+{"domain": "roleplay", "id": 56, "question": "Pretend you're a leading expert in renewable energy. What breakthrough have you recently achieved, and how will it impact the environment?"}
+{"domain": "roleplay", "id": 57, "question": "Imagine you're an influential political leader. What policies are you implementing to improve your country, and how do you deal with opposition?"}
+{"domain": "roleplay", "id": 58, "question": "Assume the persona of a master gardener. What unique garden are you cultivating, and what rare plants can be found within it?"}
+{"domain": "roleplay", "id": 59, "question": "Act as if you're a vintage car collector. Describe your most prized possession and the history behind it."}
+{"domain": "roleplay", "id": 60, "question": "Pretend you're an ancient explorer. What undiscovered lands have you claimed, and what dangers did you face during your voyages?"}
+{"domain": "extraction", "id": 61, "question": "Question: Identify the main ingredients required for the following recipe: Context: To make this delightful pasta, you'll need 200g of spaghetti, 2 cloves of garlic, a pinch of salt, 100ml of olive oil, and a handful of fresh basil. The sauce requires 300g of ripe tomatoes and 50g of grated Parmesan cheese."}
+{"domain": "extraction", "id": 62, "question": "Question: Determine the dates and locations of the upcoming concerts from the provided schedule: Context: The band will be playing in New York on July 5th, 2023, followed by a performance in Los Angeles on July 12th, 202"}
+{"domain": "extraction", "id": 63, "question": "Their European tour starts in London on August 20th, 2023, and ends in Paris on September 1st, 202"}
+{"domain": "extraction", "id": 64, "question": "Question: Extract the historical figures mentioned and their associated events: Context: In 1963, Martin Luther King Jr. delivered his famous \"I Have a Dream\" speech. In 1865, Abraham Lincoln played a significant role in the abolition of slavery through the Emancipation Proclamation."}
+{"domain": "extraction", "id": 65, "question": "Question: From the list provided, identify the athletes and their best recorded times in the 100m dash: Context: Usain Bolt set a world record with a time of 9.58 seconds in 2009. Florence Griffith Joyner's best time was 10.49 seconds, recorded in 1988."}
+{"domain": "extraction", "id": 66, "question": "Question: Determine the highest and lowest temperatures mentioned for the week: Context: The forecast predicts highs of 25°C on Monday, dropping to 15°C on Wednesday, with a slight increase to 18°C on Friday. The lowest temperature, 10°C, is expected on Thursday."}
+{"domain": "extraction", "id": 67, "question": "Question: Identify the software versions released and their release dates: Context: Version 1.0 was released in January 2019, followed by version 1.2 in March 2020. The latest update, version 2.0, was released in December 2021."}
+{"domain": "extraction", "id": 68, "question": "6. Question: Determine the highest and lowest temperatures mentioned for the week: Context: The forecast predicts highs of 25°C on Monday, dropping to 15°C on Wednesday, with a slight increase to 18°C on Friday. The lowest temperature, 10°C, is expected on Thursday.\n\n7. Question: Identify the software versions released and their release dates: Context: Version 1.0 was released in January 2019, followed by version 1.2 in March 2020. The latest update, version 2.0, was released in December 2021."}
+{"domain": "extraction", "id": 69, "question": "58 seconds in 200"}
+{"domain": "extraction", "id": 70, "question": "49 seconds, recorded in 1988.\n\n6. Question: Determine the highest and lowest temperatures mentioned for the week: Context: The forecast predicts highs of 25°C on Monday, dropping to 15°C on Wednesday, with a slight increase to 18°C on Friday. The lowest temperature, 10°C, is expected on Thursday.\n\n7. Question: Identify the software versions released and their release dates: Context: Version 1.0 was released in January 2019, followed by version 1.2 in March 2020. The latest update, version 2.0, was released in December 2021.\n\n8. Question: Extract the main conflicts and resolutions mentioned in the novel summary: Context: The protagonist faces betrayal by a close friend but ultimately finds forgiveness. A secondary conflict involves a struggle with self-doubt, which is resolved through personal growth and acceptance.\n\n9. Question: From the provided text, identify the species of trees mentioned and their average heights: Context: The Redwood tree can reach heights of over 300 feet, making it one of the tallest tree species. The Bonsai tree, however, is known for its miniature size, often not exceeding 1 meter in height."}
+{"domain": "extraction", "id": 71, "question": "Question: From the description, identify the types of coffee and their countries of origin: Context: Colombian coffee is known for its rich, mild flavor, while Ethiopian coffee is famous for its unique floral and fruity notes."}
+{"domain": "extraction", "id": 72, "question": "Question: Extract the names and genres of the bands from the given information: Context: The Rolling Stones, a rock band, have been influential since the 1960s. BTS, a K-pop group, has gained international fame in recent years."}
+{"domain": "extraction", "id": 73, "question": "Question: Identify the mathematical formulas mentioned and their applications: Context: The quadratic formula, \\(x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}\\), is used to find the roots of quadratic equations. The area of a circle is calculated using \\(A = \\pi r^2\\)."}
+{"domain": "extraction", "id": 74, "question": "Question: Determine the types of dinosaurs and their periods: Context: The Tyrannosaurus Rex, a carnivorous dinosaur, lived during the late Cretaceous period. The Stegosaurus, known for its plated back, existed in the late Jurassic period."}
+{"domain": "extraction", "id": 75, "question": "Question: From the description, identify the inventions and their inventors: Context: The light bulb was invented by Thomas Edison in the 19th century. The telephone, an invention by Alexander Graham Bell, revolutionized communication."}
+{"domain": "extraction", "id": 76, "question": "Question: Extract the names of the mountains mentioned and their elevations: Context: Mount Everest stands at 29,032 feet, making it the highest mountain in the world. Mount Kilimanjaro, with its peak at 19,341 feet, is the tallest mountain in Africa."}
+{"domain": "extraction", "id": 77, "question": "Question: Identify the languages spoken in the countries listed: Context: Spanish is the official language of Spain, while Portuguese is spoken in Brazil. In Switzerland, the main languages include German, French, and Italian."}
+{"domain": "extraction", "id": 78, "question": "Question: Determine the health benefits mentioned for the following foods: Context: Blueberries are noted for their antioxidant properties. Salmon is rich in omega-3 fatty acids, beneficial for heart health."}
+{"domain": "extraction", "id": 79, "question": "Question: Extract the historical events mentioned and their dates: Context: The fall of the Berlin Wall occurred in November 1989. The signing of the Declaration of Independence took place on July 4, 1776."}
+{"domain": "extraction", "id": 80, "question": "The latest update, version 2.0, was released in December 20"}
+{"domain": "extraction", "id": 81, "question": "8. Question: Extract the main conflicts and resolutions mentioned in the novel summary: Context: The protagonist faces betrayal by a close friend but ultimately finds forgiveness. A secondary conflict involves a struggle with self-doubt, which is resolved through personal growth and acceptance.\n\n9. Question: From the provided text, identify the species of trees mentioned and their average heights: Context: The Redwood tree can reach heights of over 300 feet, making it one of the tallest tree species. The Bonsai tree, however, is known for its miniature size, often not exceeding 1 meter in height.\n\n10. Question: Determine the planets mentioned and their distance from the sun: Context: Mercury is the closest planet to the sun, at approximately 36 million miles away. Earth is the third planet, with an average distance of about 93 million miles from the sun.\n\n11. Question: From the description, identify the types of coffee and their countries of origin: Context: Colombian coffee is known for its rich, mild flavor, while Ethiopian coffee is famous for its unique floral and fruity notes.\n\n12. Question: Extract the names and genres of the bands from the given information: Context: The Rolling Stones, a rock band, have been influential since the 1960s. BTS, a K-pop group, has gained international fame in recent years.\n\n13. Question: Identify the mathematical formulas mentioned and their applications: Context: The quadratic formula, \\(x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}\\), is used to find the roots of quadratic equations. The area of a circle is calculated using \\(A = \\pi r^2\\).\n\n14. Question: Determine the types of dinosaurs and their periods: Context: The Tyrannosaurus Rex, a carnivorous dinosaur, lived during the late Cretaceous period. The Stegosaurus, known for its plated back, existed in the late Jurassic period.\n\n15. Question: From the description, identify the inventions and their inventors: Context: The light bulb was invented by Thomas Edison in the 19th century. The telephone, an invention by Alexander Graham Bell, revolutionized communication.\n\n16. Question: Extract the names of the mountains mentioned and their elevations: Context: Mount Everest stands at 29,032 feet, making it the highest mountain in the world. Mount Kilimanjaro, with its peak at 19,341 feet, is the tallest mountain in Africa.\n\n17. Question: Identify the languages spoken in the countries listed: Context: Spanish is the official language of Spain, while Portuguese is spoken in Brazil. In Switzerland, the main languages include German, French, and Italian.\n\n18. Question: Determine the health benefits mentioned for the following foods: Context: Blueberries are noted for their antioxidant properties. Salmon is rich in omega-3 fatty acids, beneficial for heart health.\n\n19. Question: Extract the historical events mentioned and their dates: Context: The fall of the Berlin Wall occurred in November 1989. The signing of the Declaration of Independence took place on July 4, 1776.\n\n20. Question: From the list, identify the elements and their atomic numbers: Context: Oxygen has an atomic number of 8, while Carbon is identified by the atomic number 6."}
+{"domain": "extraction", "id": 82, "question": "Question: Extract the scientific principles discussed and their discoverers: Context: Isaac Newton formulated the laws of motion. The theory of relativity was introduced by Albert Einstein."}
+{"domain": "extraction", "id": 83, "question": "Their European tour starts in London on August 20th, 2023, and ends in Paris on September 1st, 20"}
+{"domain": "extraction", "id": 84, "question": "Question: Determine the vitamins mentioned and their benefits: Context: Vitamin D is essential for bone health and is obtained from sunlight. Vitamin C boosts the immune system and can be found in citrus fruits."}
+{"domain": "extraction", "id": 85, "question": "Question: From the description, identify the types of tea and their origins: Context: Darjeeling tea, known for its musky-sweet tasting notes, originates from India. Matcha, a type of green tea, comes from Japan."}
+{"domain": "extraction", "id": 86, "question": "Question: Extract the famous landmarks mentioned and their locations: Context: The Eiffel Tower, a symbol of Paris, France, was completed in 1889. The Statue of Liberty, a gift from France, is located in New York Harbor."}
+{"domain": "extraction", "id": 87, "question": "Question: Determine the chemical elements and their symbols: Context: Helium is represented by the symbol He. Iron is denoted by the symbol Fe."}
+{"domain": "extraction", "id": 88, "question": "Question: Identify the philosophers mentioned and their key ideas: Context: Socrates is known for the Socratic method, emphasizing critical questioning. Friedrich Nietzsche discussed the concept of the \"will to power\" and the \"Übermensch.\""}
+{"domain": "extraction", "id": 89, "question": "Question: Extract the modes of transportation mentioned and their average speeds: Context: Commercial airplanes typically fly at speeds around 550 miles per hour. High-speed trains can reach speeds up to 200 miles per hour."}
+{"domain": "extraction", "id": 90, "question": "Question: From the provided information, identify the architectural styles and their characteristics: Context: Gothic architecture is recognized by its pointed arches and ribbed vaults. Modern architecture features minimalism and the use of industrial materials."}
+{"domain": "reasoning", "id": 91, "question": "If a farmer buys chicken feed for $8.50 per bag and sells eggs at $3.50 per dozen, how many dozens of eggs must be sold to cover the cost of one bag of feed?"}
+{"domain": "reasoning", "id": 92, "question": "A car travels at a speed of 60 miles per hour for 2 hours and then 30 miles per hour for 1 hour. What is the average speed of the car over the 3 hours?"}
+{"domain": "reasoning", "id": 93, "question": "50 per dozen, how many dozens of eggs must be sold to cover the cost of one bag of feed?\n2. A car travels at a speed of 60 miles per hour for 2 hours and then 30 miles per hour for 1 hour. What is the average speed of the car over the 3 hours?"}
+{"domain": "reasoning", "id": 94, "question": "You have 3 apples and you take away 2. How many apples do you have now?"}
+{"domain": "reasoning", "id": 95, "question": "If it takes 6 minutes to boil one egg, how long will it take to boil four eggs at the same time?"}
+{"domain": "reasoning", "id": 96, "question": "In a family, there are two parents and four children. The parents have three sons and two daughters. How is this possible?"}
+{"domain": "reasoning", "id": 97, "question": "If you rearrange the letters \"CIFAIPC\" you would have the name of a(n): City, Animal, Ocean, or River?"}
+{"domain": "reasoning", "id": 98, "question": "50 per bag and sells eggs at $3.50 per dozen, how many dozens of eggs must be sold to cover the cost of one bag of feed?\n2. A car travels at a speed of 60 miles per hour for 2 hours and then 30 miles per hour for 1 hour. What is the average speed of the car over the 3 hours?\n3. If five people can paint five houses in five days, how long would it take ten people to paint ten houses?\n4. You have 3 apples and you take away 2. How many apples do you have now?\n5. If it takes 6 minutes to boil one egg, how long will it take to boil four eggs at the same time?\n6. In a family, there are two parents and four children. The parents have three sons and two daughters. How is this possible?\n7. If you rearrange the letters \"CIFAIPC\" you would have the name of a(n): City, Animal, Ocean, or River?"}
+{"domain": "reasoning", "id": 99, "question": "If you are running in a marathon and you passed the person in 2nd place, what place are you in now?"}
+{"domain": "reasoning", "id": 100, "question": "Three doctors said that Robert is their brother. Robert says he has no brothers. Who is lying?"}
+{"domain": "reasoning", "id": 101, "question": "A boy and a doctor went fishing. The boy is the doctor's son, but the doctor is not the boy's father. Who is the doctor?"}
+{"domain": "reasoning", "id": 102, "question": "If there are three apples and you take away two, how many apples do you have?"}
+{"domain": "reasoning", "id": 103, "question": "A farmer has 17 sheep, all but 9 die. How many are left?"}
+{"domain": "reasoning", "id": 104, "question": "You are in a race and overtake the last person. What position are you in now?"}
+{"domain": "reasoning", "id": 105, "question": "If every single person leaves a town and a couple enters the town, what is the population of the town now?"}
+{"domain": "reasoning", "id": 106, "question": "A man builds a house rectangular in shape. All sides have southern exposure. A big bear walks by, what color is the bear?"}
+{"domain": "reasoning", "id": 107, "question": "If you divide 30 by half and add ten, what do you get?"}
+{"domain": "reasoning", "id": 108, "question": "Two fathers and two sons go fishing. Each of them catches one fish. So why do they bring home only three fish?"}
+{"domain": "reasoning", "id": 109, "question": "If you have only one match and enter a cold, dark room with an oil heater, a kerosene lamp, and a candle, which do you light first?"}
+{"domain": "reasoning", "id": 110, "question": "The day before two days after the day before tomorrow is Saturday. What day is it today?"}
+{"domain": "reasoning", "id": 111, "question": "A man is looking at a photograph of someone. His friend asks who it is. The man replies, \"Brothers and sisters, I have none. But that man's father is my father's son.\" Who was in the photograph?"}
+{"domain": "reasoning", "id": 112, "question": "If you spell “sit in the tub” s-o-a-k, and you spell “a funny story” j-o-k-e, how do you spell “the color of the ocean”?"}
+{"domain": "reasoning", "id": 113, "question": "A plane crashes on the border of the U.S. and Canada. Where do they bury the survivors?"}
+{"domain": "reasoning", "id": 114, "question": "In a year, there are 12 months. Seven months have 31 days. How many months have 28 days?"}
+{"domain": "reasoning", "id": 115, "question": "If an electric train is moving north at 100 miles per hour and the wind is blowing to the west at 10 miles per hour, which way does the smoke blow?"}
+{"domain": "reasoning", "id": 116, "question": "Before Mt. Everest was discovered, what was the highest mountain in the world?"}
+{"domain": "reasoning", "id": 117, "question": "If you throw a red stone into the blue sea, what will it become?"}
+{"domain": "reasoning", "id": 118, "question": "A rooster laid an egg on top of the barn roof. Which way did it roll?"}
+{"domain": "reasoning", "id": 119, "question": "You have 8 balls of equal size. 7 of them weigh the same, and one of them weighs slightly more. How can you find the ball that is heavier by using a balance and only two weighings?"}
+{"domain": "reasoning", "id": 120, "question": "If it takes 5 workers 5 hours to build a wall, how long would it take 10 workers to build the same wall?"}
+{"domain": "math", "id": 121, "question": "How do you calculate the derivative of f(x) = 3x^2 - 2x + 5?"}
+{"domain": "math", "id": 122, "question": "What is the integral of f(x) = x^3 from x = 0 to x = 2?"}
+{"domain": "math", "id": 123, "question": "Solve the system of equations: 3x + 4y = 5 and -x + 2y = -1."}
+{"domain": "math", "id": 124, "question": "How can you determine the limit of (2x^2 - 4x + 2) / (x - 1) as x approaches 1?"}
+{"domain": "math", "id": 125, "question": "Calculate the volume of a sphere with a radius of 6 cm."}
+{"domain": "math", "id": 126, "question": "What is the sum of the infinite geometric series 1/2 + 1/4 + 1/8 + ... ?"}
+{"domain": "math", "id": 127, "question": "Find the 10th term of the arithmetic sequence 3, 7, 11, ..."}
+{"domain": "math", "id": 128, "question": "How do you convert the polar coordinate (4, π/3) to Cartesian coordinates?"}
+{"domain": "math", "id": 129, "question": "Determine the equation of the circle passing through points (1,1), (2,2), and (3,3)."}
+{"domain": "math", "id": 130, "question": "Calculate the determinant of the matrix [[1, 2, 3], [4, 5, 6], [7, 8, 9]]."}
+{"domain": "math", "id": 131, "question": "What is the solution to the differential equation dy/dx = 3y with the initial condition y(0) = 2?"}
+{"domain": "math", "id": 132, "question": "Simplify the complex number (3 + 4i) / (1 - 2i)."}
+{"domain": "math", "id": 133, "question": "Find the area under the curve y = x^3 from x = -1 to x = 1."}
+{"domain": "math", "id": 134, "question": "How do you find the inverse function of f(x) = 2x + 3?"}
+{"domain": "math", "id": 135, "question": "Calculate the probability of drawing 2 aces in a row from a standard deck of 52 cards."}
+{"domain": "math", "id": 136, "question": "What is the 15th term of the Fibonacci sequence?"}
+{"domain": "math", "id": 137, "question": "Determine the angle between the vectors (3, 4) and (4, -3) in degrees."}
+{"domain": "math", "id": 138, "question": "How do you solve the quadratic equation x^2 - 4x + 4 = 0?"}
+{"domain": "math", "id": 139, "question": "Find the least common multiple (LCM) of 24 and 36."}
+{"domain": "math", "id": 140, "question": "Calculate the surface area of a cone with radius 3 cm and height 4 cm."}
+{"domain": "math", "id": 141, "question": "What is the sum of the angles in a decagon?"}
+{"domain": "math", "id": 142, "question": "How do you find the range of the function f(x) = 2/(x - 1)?"}
+{"domain": "math", "id": 143, "question": "Determine the centroid of the triangle with vertices at (0,0), (6,0), and (0,4)."}
+{"domain": "math", "id": 144, "question": "Solve for x in the logarithmic equation log2(x) + log2(x - 2) = 3."}
+{"domain": "math", "id": 145, "question": "Calculate the arc length of the curve y = x^2 from x = 0 to x = 2."}
+{"domain": "math", "id": 146, "question": "What is the nth term formula for the geometric sequence 2, 6, 18, ...?"}
+{"domain": "math", "id": 147, "question": "Determine the radius of a circle whose circumference is 31.4 cm."}
+{"domain": "math", "id": 148, "question": "How do you solve the permutation formula nPr for n=7 and r=3?"}
+{"domain": "math", "id": 149, "question": "Calculate the compound interest on a principal of $1000 at an annual rate of 5% compounded quarterly for 2 years."}
+{"domain": "math", "id": 150, "question": "What is the solution to the exponential equation 2^x = 32?"}
+{"domain": "coding", "id": 151, "question": "How can you invert a binary tree in Python?"}
+{"domain": "coding", "id": 152, "question": "Write a JavaScript function to check if a string is a palindrome using recursion."}
+{"domain": "coding", "id": 153, "question": "Create a SQL query to find the third highest salary from the Employees table."}
+{"domain": "coding", "id": 154, "question": "Explain how to merge two sorted arrays into a single sorted array in Java."}
+{"domain": "coding", "id": 155, "question": "Implement a Python function to find all permutations of a given string without using recursion."}
+{"domain": "coding", "id": 156, "question": "Describe how to perform a bubble sort on an array of integers in C++."}
+{"domain": "coding", "id": 157, "question": "Develop a Ruby script that counts the number of vowels in a given text file."}
+{"domain": "coding", "id": 158, "question": "Write a Python program to implement a stack using queues."}
+{"domain": "coding", "id": 159, "question": "Create a JavaScript snippet to dynamically add a form field when a button is clicked."}
+{"domain": "coding", "id": 160, "question": "Implement a linear search algorithm in Java for searching an element in an array."}
+{"domain": "coding", "id": 161, "question": "Develop a Python function that converts a Roman numeral to an integer."}
+{"domain": "coding", "id": 162, "question": "Write a SQL query to list all employees who have never been assigned projects from the Employees and Projects tables."}
+{"domain": "coding", "id": 163, "question": "How to create a responsive navigation bar using HTML and CSS?"}
+{"domain": "coding", "id": 164, "question": "Develop a program in C to check if a linked list is a palindrome."}
+{"domain": "coding", "id": 165, "question": "Implement a queue using two stacks in Python."}
+{"domain": "coding", "id": 166, "question": "Write a JavaScript function that returns the nth Fibonacci number using dynamic programming."}
+{"domain": "coding", "id": 167, "question": "Create a SQL query to find the average salary in each department from the Employees table."}
+{"domain": "coding", "id": 168, "question": "How can you sort an array of strings by their length in Ruby?"}
+{"domain": "coding", "id": 169, "question": "Implement a binary search algorithm in Python on a sorted array."}
+{"domain": "coding", "id": 170, "question": "Write a C++ program to reverse a string without using library functions."}
+{"domain": "coding", "id": 171, "question": "Develop a PHP script to validate an email address format."}
+{"domain": "coding", "id": 172, "question": "Create a JavaScript program to find the intersection of two arrays."}
+{"domain": "coding", "id": 173, "question": "Implement a function in Java that checks whether a tree is a binary search tree."}
+{"domain": "coding", "id": 174, "question": "Write a SQL query to delete duplicate records in a table without using a temporary table."}
+{"domain": "coding", "id": 175, "question": "How to implement a hash table from scratch in Python?"}
+{"domain": "coding", "id": 176, "question": "Develop a CSS solution for a grid layout that adapts to different screen sizes."}
+{"domain": "coding", "id": 177, "question": "Write a Python script to scrape the titles of the first page of Google search results."}
+{"domain": "coding", "id": 178, "question": "Implement a depth-first search algorithm in C for a graph represented using an adjacency list."}
+{"domain": "coding", "id": 179, "question": "Create a JavaScript clock that displays time in HH:MM:SS format and updates every second."}
+{"domain": "coding", "id": 180, "question": "How to encrypt and decrypt a string in Java using the AES encryption algorithm?"}
+{"domain": "STEM knowledge", "id": 181, "question": "How does the theory of relativity explain the concept of time dilation?"}
+{"domain": "STEM knowledge", "id": 182, "question": "What is the significance of the Higgs boson in particle physics?"}
+{"domain": "STEM knowledge", "id": 183, "question": "How does CRISPR-Cas9 technology enable gene editing, and what are its potential implications?"}
+{"domain": "STEM knowledge", "id": 184, "question": "What are the key differences between prokaryotic and eukaryotic cells?"}
+{"domain": "STEM knowledge", "id": 185, "question": "In computer science, how does a blockchain ensure data security and integrity?"}
+{"domain": "STEM knowledge", "id": 186, "question": "Can you explain the process of photosynthesis and its importance in the biosphere?"}
+{"domain": "STEM knowledge", "id": 187, "question": "What role do enzymes play in catalyzing biochemical reactions?"}
+{"domain": "STEM knowledge", "id": 188, "question": "How do vaccines stimulate the immune system to protect against diseases?"}
+{"domain": "STEM knowledge", "id": 189, "question": "What is the principle behind the working of a lithium-ion battery?"}
+{"domain": "STEM knowledge", "id": 190, "question": "In astrophysics, what mechanisms are proposed to explain the formation of black holes?"}
+{"domain": "STEM knowledge", "id": 191, "question": "What is the significance of Mendel's laws in understanding genetics?"}
+{"domain": "STEM knowledge", "id": 192, "question": "How does the greenhouse effect contribute to global warming?"}
+{"domain": "STEM knowledge", "id": 193, "question": "What are the basic principles of fluid dynamics that explain how airplanes fly?"}
+{"domain": "STEM knowledge", "id": 194, "question": "Can you explain the concept of machine learning and how it differs from traditional programming?"}
+{"domain": "STEM knowledge", "id": 195, "question": "How do tectonic plate movements cause earthquakes?"}
+{"domain": "STEM knowledge", "id": 196, "question": "What is the role of neurotransmitters in the functioning of the nervous system?"}
+{"domain": "STEM knowledge", "id": 197, "question": "How does the polymerase chain reaction (PCR) technique amplify DNA?"}
+{"domain": "STEM knowledge", "id": 198, "question": "What is the significance of Fibonacci numbers in nature and mathematics?"}
+{"domain": "STEM knowledge", "id": 199, "question": "How do solar panels convert sunlight into electrical energy?"}
+{"domain": "STEM knowledge", "id": 200, "question": "What is the difference between renewable and non-renewable energy sources?"}
+{"domain": "STEM knowledge", "id": 201, "question": "How does the pH level affect chemical reactions in biological systems?"}
+{"domain": "STEM knowledge", "id": 202, "question": "What is the Turing test, and why is it important in artificial intelligence?"}
+{"domain": "STEM knowledge", "id": 203, "question": "How do antiretroviral drugs work in treating HIV/AIDS?"}
+{"domain": "STEM knowledge", "id": 204, "question": "What principles of physics are involved in magnetic resonance imaging (MRI)?"}
+{"domain": "STEM knowledge", "id": 205, "question": "How is the periodic table of elements organized, and why is it useful?"}
+{"domain": "STEM knowledge", "id": 206, "question": "What are the challenges of creating sustainable nuclear fusion as a source of energy?"}
+{"domain": "STEM knowledge", "id": 207, "question": "How do antibiotics kill or inhibit the growth of bacteria?"}
+{"domain": "STEM knowledge", "id": 208, "question": "What is the concept of entropy in thermodynamics, and how does it relate to disorder?"}
+{"domain": "STEM knowledge", "id": 209, "question": "How are algorithms used in data encryption to secure information?"}
+{"domain": "STEM knowledge", "id": 210, "question": "What are the potential applications and implications of nanotechnology in medicine?"}
+{"domain": "humanities/social science knowledge", "id": 211, "question": "What are the major differences between classical and operant conditioning in psychology?"}
+{"domain": "humanities/social science knowledge", "id": 212, "question": "How did the Treaty of Versailles contribute to the outbreak of World War II?"}
+{"domain": "humanities/social science knowledge", "id": 213, "question": "Discuss the impact of globalization on income inequality within developed nations."}
+{"domain": "humanities/social science knowledge", "id": 214, "question": "Explain the significance of the Silk Road in facilitating cultural and economic exchange between East and West."}
+{"domain": "humanities/social science knowledge", "id": 215, "question": "What are the main arguments for and against the death penalty from a moral and legal standpoint?"}
+{"domain": "humanities/social science knowledge", "id": 216, "question": "Describe the key features of Renaissance art that distinguish it from the medieval period."}
+{"domain": "humanities/social science knowledge", "id": 217, "question": "How does the caste system in India affect its society and economy today?"}
+{"domain": "humanities/social science knowledge", "id": 218, "question": "What was the role of women in the French Revolution, and how did it change their status in society?"}
+{"domain": "humanities/social science knowledge", "id": 219, "question": "Compare and contrast the philosophies of Aristotle and Plato."}
+{"domain": "humanities/social science knowledge", "id": 220, "question": "Analyze the social and economic consequences of the Industrial Revolution in Europe."}
+{"domain": "humanities/social science knowledge", "id": 221, "question": "What is cultural relativism, and how does it challenge ethnocentric views?"}
+{"domain": "humanities/social science knowledge", "id": 222, "question": "Explain the concept of 'social contract' in the political theories of Hobbes, Locke, and Rousseau."}
+{"domain": "humanities/social science knowledge", "id": 223, "question": "How did the Cold War influence decolonization processes in Africa and Asia?"}
+{"domain": "humanities/social science knowledge", "id": 224, "question": "What are the psychological effects of social media on teenagers?"}
+{"domain": "humanities/social science knowledge", "id": 225, "question": "Discuss the ethical implications of artificial intelligence in decision-making."}
+{"domain": "humanities/social science knowledge", "id": 226, "question": "How do linguistic theories explain language acquisition in children?"}
+{"domain": "humanities/social science knowledge", "id": 227, "question": "What were the main causes and effects of the Great Depression in the United States?"}
+{"domain": "humanities/social science knowledge", "id": 228, "question": "Describe the feminist movements' evolution from the first wave to the present."}
+{"domain": "humanities/social science knowledge", "id": 229, "question": "How has the concept of human rights evolved over time?"}
+{"domain": "humanities/social science knowledge", "id": 230, "question": "What is the significance of the Battle of Stalingrad in World War II?"}
+{"domain": "humanities/social science knowledge", "id": 231, "question": "Explain the role of religion in shaping Middle Eastern political landscapes."}
+{"domain": "humanities/social science knowledge", "id": 232, "question": "What are the primary factors driving urbanization, and what are its potential impacts on society?"}
+{"domain": "humanities/social science knowledge", "id": 233, "question": "How did the Enlightenment influence the development of modern democratic ideals?"}
+{"domain": "humanities/social science knowledge", "id": 234, "question": "Discuss the implications of climate change on global migration patterns."}
+{"domain": "humanities/social science knowledge", "id": 235, "question": "What is post-colonial theory, and how does it apply to contemporary literature?"}
+{"domain": "humanities/social science knowledge", "id": 236, "question": "How do economic sanctions work, and what are their intended and actual effects?"}
+{"domain": "humanities/social science knowledge", "id": 237, "question": "What is the role of NGOs in international relations and humanitarian efforts?"}
+{"domain": "humanities/social science knowledge", "id": 238, "question": "Analyze the impact of digital technology on the preservation of cultural heritage."}
+{"domain": "humanities/social science knowledge", "id": 239, "question": "What are the challenges and benefits of multiculturalism in contemporary societies?"}
+{"domain": "humanities/social science knowledge", "id": 240, "question": "How has the concept of privacy changed with the advent of the internet and social media?"}

@@ -61,7 +61,7 @@ def apply_chat_style():
     st.markdown(content, unsafe_allow_html=True)
 
 
-def show_debates(folder="../LLM_eval/data/main_tour_40"):
+def show_debates(folder: str):
     paths = sorted(Path(folder).glob("round*/*debate_history.jsonl"))
     debate_file = st.selectbox("Debate File", paths, format_func=lambda p: p.name)
     info_link = (
@@ -100,9 +100,16 @@ def show_debates(folder="../LLM_eval/data/main_tour_40"):
                 st.write(text)
 
 
-def show_results(
-    path: str = "../LLM_eval/data/main_tour_40/round13_add_qwen-max-0428/elo_history.csv",
-):
+def get_latest_elo_file(folder: str) -> str:
+    num_rounds = len(sorted(Path(folder).glob("round*")))
+    for p in sorted(Path(folder).iterdir()):
+        if p.name.startswith(f"round{num_rounds}"):
+            return str(Path(p, "elo_history.csv"))
+    raise ValueError
+
+
+def show_results(folder: str):
+    path = get_latest_elo_file(folder)
     data = pd.read_csv(path)
     data = data.transpose()
     data = data.iloc[1:]
@@ -140,7 +147,7 @@ def show_results(
             x="ELO Score",
             color="ELO Score",
         )
-    ).properties(height=400)
+    ).properties(height=30 * data.shape[0])
     st.altair_chart(chart, use_container_width=True)
 
 
@@ -161,12 +168,14 @@ def show_links():
 def main():
     st.header("🏆 Arena Leaderboard")
     show_links()
+    language = st.selectbox("Evaluation Language", ["English", "Chinese"])
+    folder = "data/main_tour_40" if language == "English" else "data/main_tour_40_zh"
     tabs = st.tabs(["Leaderboard Results", "Debate Samples", "About Us"])
 
     with tabs[0]:
-        show_results()
+        show_results(folder)
     with tabs[1]:
-        show_debates()
+        show_debates(folder)
     with tabs[2]:
         show_about()
 
