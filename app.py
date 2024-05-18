@@ -1,38 +1,64 @@
+import base64
 import json
 from pathlib import Path
-from typing import List
+from typing import List, Dict
 
 import altair
 import pandas as pd
 import streamlit as st
+from pydantic import BaseModel
 
 
-def get_organization(model_name: str):
-    if "gpt" in model_name.lower():
-        return "OpenAI"
-    if "llama" in model_name.lower():
-        return "Meta"
-    if "glm" in model_name.lower():
-        return "ZhipuAI"
-    if "mistral" in model_name.lower() or "mixtral" in model_name.lower():
-        return "Mistral"
-    if "reka" in model_name.lower():
-        return "Reka AI"
-    if "claude" in model_name.lower():
-        return "Anthropic"
-    if "deepseek" in model_name.lower():
-        return "Deepseek AI"
-    if "qwen" in model_name.lower():
-        return "Alibaba Cloud"
-    if "command-r" in model_name.lower():
-        return "Cohere"
-    if "sensechat" in model_name.lower():
-        return "SenseTime"
-    if "wenxin" in model_name.lower():
-        return "Baidu"
-    if "zero-one-ai" in model_name.lower():
-        return "01.AI"
-    return ""
+class ModelsInfo(BaseModel):
+    path: str = "models_info.csv"
+    info: Dict[str, dict] = {}
+
+    def load(self):
+        if not self.info:
+            df = pd.read_csv(self.path)
+            for record in df.to_dict(orient="records"):
+                self.info[record["Model"]] = record
+
+    def get_organization(self, model_name: str) -> str:
+        self.load()
+        return self.info[model_name]["Organization"]
+
+    def get_website(self, model_name: str) -> str:
+        self.load()
+        return self.info[model_name]["Website"]
+
+    def get_icon(self, model_name: str) -> str:
+        # Streamlit requires the data url eg "data:image/png;base64,iVBO..."
+        self.load()
+        path = self.info[model_name]["Icon"]
+        assert Path(path).exists()
+
+        with open(path, "rb") as f:
+            image_data = f.read()
+            encoded_data = base64.b64encode(image_data).decode("utf-8")
+            mime_type = {
+                ".png": "image/png",
+                ".jpg": "image/jpeg",
+                ".jpeg": "image/jpeg",
+                ".webp": "image/webp",
+                ".svg": "image/svg+xml",
+            }[Path(path).suffix]
+
+            return f"data:{mime_type};base64,{encoded_data}"
+
+
+def apply_chat_style():
+    # Arrange the user and assistant chats in a left-right style (instead of all left)
+    # https://discuss.streamlit.io/t/how-to-display-user-and-assistant-chat-on-opposite-sides-when-streaming-like-a-conversation/60336/4
+    content = """
+    <style>
+        .st-emotion-cache-4oy321 {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+    </style>
+    """
+    st.markdown(content, unsafe_allow_html=True)
 
 
 def show_debates(folder="../LLM_eval/data/main_tour_40"):
@@ -50,16 +76,17 @@ def show_debates(folder="../LLM_eval/data/main_tour_40"):
             format_func=lambda s: f"{s['question']['domain'].capitalize()}: {s['question']['question']}",
         )
         candidates = sample["candidates"]
+        with st.chat_message("human"):
+            st.write(sample["question"]["question"])
 
         for i, debate_round in enumerate(sample["rounds"]):
-            st.subheader(f"Round {i + 1}")
-            for j, (key, turn) in enumerate(debate_round):
-                model = dict(a=candidates[0], b=candidates[1])[key]
-                # st.subheader(f"Turn {j + 1}: {model}")
-                with st.chat_message("human", avatar=info_link):
-                    st.write(f"Turn {j + 1}: {model}")
-                with st.chat_message("assistant"):
-                    st.write(turn["original"])
+            with st.expander(f"Round {i + 1}"):
+                for j, (key, turn) in enumerate(debate_round):
+                    model = dict(a=candidates[0], b=candidates[1])[key]
+                    with st.chat_message("human", avatar=info_link):
+                        st.write(f"Turn {j + 1}: {model}")
+                    with st.chat_message("assistant"):
+                        st.write(turn["original"])
 
     judgement_file = str(debate_file).replace("debate_history", "judge_results")
     with open(judgement_file) as f:
@@ -69,14 +96,13 @@ def show_debates(folder="../LLM_eval/data/main_tour_40"):
         for k, text in enumerate(all_judgements[index][judge]["judgement"]):
             key = all_judgements[index][judge]["winner"][k]
             winner = dict(A=candidates[0], B=candidates[1], tie="Tie")[key]
-            # st.subheader(f"Judgement {k + 1}, Winner: {winner}")
-            with st.chat_message("human", avatar=info_link):
-                st.write(f"Judgement {k + 1}, Winner: {winner}")
-            with st.chat_message("assistant"):
+            with st.expander(f"Judgement {k + 1}, Winner: {winner}"):
                 st.write(text)
 
 
-def show_results(path: str = "elo_history.csv"):
+def show_results(
+    path: str = "../LLM_eval/data/main_tour_40/round13_add_qwen-max-0428/elo_history.csv",
+):
     data = pd.read_csv(path)
     data = data.transpose()
     data = data.iloc[1:]
@@ -84,13 +110,24 @@ def show_results(path: str = "elo_history.csv"):
     data = data[["index", data.columns[-1]]]
     data.columns = ["Model", "ELO Score"]
 
+    info = ModelsInfo()
     data[data.columns[-1]] = data[data.columns[-1]].round()
     data = data.sort_values(by=data.columns[-1], ascending=False)
     data.insert(0, "Ranking", [i + 1 for i in range(data.shape[0])])
-    data.insert(1, "Organization", data["Model"].map(get_organization))
-    st.dataframe(data, hide_index=True, use_container_width=True)
+    data.insert(1, "Organization", data["Model"].map(info.get_organization))
+    data.insert(3, "Website", data["Model"].map(info.get_website))
+    data.insert(1, "Icon", data["Model"].map(info.get_icon))
 
-    # st.bar_chart(data, x="Model", y="ELO Score")
+    st.dataframe(
+        data,
+        hide_index=True,
+        use_container_width=True,
+        column_config={
+            "Website": st.column_config.LinkColumn(display_text="Link"),
+            "Icon": st.column_config.ImageColumn(width="small"),
+        },
+    )
+
     chart = (
         altair.Chart(data)
         .mark_bar()
@@ -103,7 +140,7 @@ def show_results(path: str = "elo_history.csv"):
             x="ELO Score",
             color="ELO Score",
         )
-    )
+    ).properties(height=400)
     st.altair_chart(chart, use_container_width=True)
 
 
@@ -132,6 +169,10 @@ def main():
         show_debates()
     with tabs[2]:
         show_about()
+
+    # For questions, show the full one without truncation also
+    # For chat message style, show a left-right style between two bots
+    # Support both english and chinese chats
 
 
 if __name__ == "__main__":
