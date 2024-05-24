@@ -149,15 +149,24 @@ def show_debates(folder: str):
                     st.link_button(model, info.get_website(model))
                     st.write(turn["original"])
 
-    judge = st.selectbox("Judge", options=judgements["judges"])
     mapping = dict(A=candidates[0], B=candidates[1], tie="Tie", error="Error")
-    for k, text in enumerate(judgements[judge]["judgement"]):
-        key = judgements[judge]["winner"][k]
-        winner = mapping[key]
-        with st.expander(f"Judgement {k + 1}, Winner: {winner}"):
-            st.write(text)
+    with st.expander(f"Overall Winner: {mapping[judgements['final_winner'][-1]]}"):
+        judge = st.selectbox("Judge", options=judgements["judges"])
+        columns = st.columns(2)
+        for j in [0, 1]:
+            columns[j].link_button(
+                f"Assistant {'AB'[j]}: {candidates[j]}",
+                info.get_website(candidates[j]),
+                use_container_width=True,
+            )
 
-    st.write(f"Overall winner: {mapping[judgements['final_winner'][-1]]}")
+        for k, text in enumerate(judgements[judge]["judgement"]):
+            with st.chat_message("user", avatar=info.get_icon(judge)):
+                st.write(text)
+            winner = mapping[judgements[judge]["winner"][k]]
+            if winner not in info.get_model_names():
+                continue
+            st.link_button(winner, info.get_website(winner), use_container_width=True)
 
 
 def get_latest_elo_file(folder: str) -> str:
