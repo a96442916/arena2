@@ -46,6 +46,10 @@ class ModelsInfo(BaseModel):
 
             return f"data:{mime_type};base64,{encoded_data}"
 
+    def get_model_names(self) -> List[str]:
+        self.load()
+        return sorted(self.info.keys())
+
 
 def apply_chat_style():
     # Arrange the user and assistant chats in a left-right style (instead of all left)
@@ -61,43 +65,97 @@ def apply_chat_style():
     st.markdown(content, unsafe_allow_html=True)
 
 
+def load_debates_and_judgements(
+    debate_file: str, num_per_domain: int = 2
+) -> List[tuple]:
+    with open(debate_file) as f:
+        records = [json.loads(line) for line in f]
+        debates = {str(raw["gamekey"]): raw for raw in records}
+    with open(debate_file.replace("debate_history", "judge_results")) as f:
+        records = [json.loads(line) for line in f]
+        judgements = {str(raw["gamekey"]): raw for raw in records}
+    assert debates.keys() == judgements.keys()
+
+    counts = {}
+    outputs = []
+    for key in sorted(debates.keys()):
+        domain = debates[key]["question"]["domain"]
+        counts.setdefault(domain, 0)
+        if counts[domain] < num_per_domain:
+            counts[domain] += 1
+            outputs.append((debates[key], judgements[key]))
+
+    return outputs
+
+
+def find_models(paths: List[Path], info: ModelsInfo) -> List[str]:
+    lst = []
+    for p in paths:
+        for name in info.get_model_names():
+            if name.replace("/", "_") in str(p):
+                lst.append(name)
+    return sorted(set(lst))
+
+
+def find_opponents(model: str, paths: List[Path], info: ModelsInfo) -> List[str]:
+    lst = []
+    for p in paths:
+        if model.replace("/", "_") in str(p):
+            for other in info.get_model_names():
+                if other != model and other.replace("/", "_") in str(p):
+                    lst.append(other)
+
+    assert lst, breakpoint()
+    return sorted(set(lst))
+
+
+def find_debate_file(model_a: str, model_b: str, paths: List[Path]) -> Path:
+    for p in paths:
+        if model_a.replace("/", "_") in str(p):
+            if model_b.replace("/", "_") in str(p):
+                return p
+
+
 def show_debates(folder: str):
+    info = ModelsInfo()
     paths = sorted(Path(folder).glob("round*/*debate_history.jsonl"))
-    debate_file = st.selectbox("Debate File", paths, format_func=lambda p: p.name)
+    columns = st.columns(2)
+    model_a = columns[0].selectbox("Model A", find_models(paths, info))
+    model_b = columns[1].selectbox("Model B", find_opponents(model_a, paths, info))
+    debate_file = find_debate_file(model_a, model_b, paths)
+    data = load_debates_and_judgements(str(debate_file))
+
     info_link = (
         "https://static-00.iconduck.com/assets.00/info-icon-2048x2048-tcgtx810.png"
     )
 
-    with open(debate_file) as f:
-        all_samples: List[dict] = [json.loads(line) for line in f]
-        sample = st.selectbox(
-            "Debate Question",
-            options=all_samples,
-            format_func=lambda s: f"{s['question']['domain'].capitalize()}: {s['question']['question']}",
-        )
-        candidates = sample["candidates"]
-        with st.chat_message("human"):
-            st.write(sample["question"]["question"])
+    debate, judgements = st.selectbox(
+        "Debate Question",
+        options=data,
+        format_func=lambda s: f"{s[0]['question']['domain'].capitalize()}: {s[0]['question']['question']}",
+    )
+    candidates = debate["candidates"]
+    with st.chat_message("human"):
+        st.write(debate["question"]["question"])
 
-        for i, debate_round in enumerate(sample["rounds"]):
-            with st.expander(f"Round {i + 1}"):
-                for j, (key, turn) in enumerate(debate_round):
-                    model = dict(a=candidates[0], b=candidates[1])[key]
-                    with st.chat_message("human", avatar=info_link):
-                        st.write(f"Turn {j + 1}: {model}")
-                    with st.chat_message("assistant"):
-                        st.write(turn["original"])
+    for i, debate_round in enumerate(debate["rounds"]):
+        with st.expander(f"Round {i + 1}"):
+            for j, (key, turn) in enumerate(debate_round):
+                model = dict(a=candidates[0], b=candidates[1])[key]
+                with st.chat_message("human", avatar=info_link):
+                    st.write(f"Turn {j + 1}: {model}")
+                with st.chat_message("assistant"):
+                    st.write(turn["original"])
 
-    judgement_file = str(debate_file).replace("debate_history", "judge_results")
-    with open(judgement_file) as f:
-        all_judgements = [json.loads(line) for line in f]
-        index = all_samples.index(sample)
-        judge = st.selectbox("Judge", options=all_judgements[index]["judges"])
-        for k, text in enumerate(all_judgements[index][judge]["judgement"]):
-            key = all_judgements[index][judge]["winner"][k]
-            winner = dict(A=candidates[0], B=candidates[1], tie="Tie")[key]
-            with st.expander(f"Judgement {k + 1}, Winner: {winner}"):
-                st.write(text)
+    judge = st.selectbox("Judge", options=judgements["judges"])
+    mapping = dict(A=candidates[0], B=candidates[1], tie="Tie", error="Error")
+    for k, text in enumerate(judgements[judge]["judgement"]):
+        key = judgements[judge]["winner"][k]
+        winner = mapping[key]
+        with st.expander(f"Judgement {k + 1}, Winner: {winner}"):
+            st.write(text)
+
+    st.write(f"Overall winner: {mapping[judgements['final_winner'][-1]]}")
 
 
 def get_latest_elo_file(folder: str) -> str:
@@ -106,6 +164,35 @@ def get_latest_elo_file(folder: str) -> str:
         if p.name.startswith(f"round{num_rounds}"):
             return str(Path(p, "elo_history.csv"))
     raise ValueError
+
+
+def show_html_table(data: pd.DataFrame):
+    data = data.copy(deep=True)
+    data["Organization"] = data.apply(
+        lambda row: f'<img src="{row["Icon"]}" width="24"/> {row["Organization"]}',
+        axis=1,
+    )
+    data["Model"] = data.apply(
+        lambda row: f'<a href="{row["Website"]}">{row["Model"]}</a>',
+        axis=1,
+    )
+
+    raw = data.to_html(
+        columns=["Ranking", "Organization", "Model", "ELO Score"],
+        justify="left",
+        index=False,
+        escape=False,
+        render_links=True,
+    )
+
+    content = f"""
+    <div style="height:400px; overflow:auto;">
+        {raw}
+    </div>
+    """
+
+    st.write(content, unsafe_allow_html=True)
+    st.divider()
 
 
 def show_results(folder: str):
@@ -179,9 +266,8 @@ def main():
     with tabs[2]:
         show_about()
 
-    # For questions, show the full one without truncation also
     # For chat message style, show a left-right style between two bots
-    # Support both english and chinese chats
+    # Indicate for each round, which is A and which is B (also best if left-right chat style)
 
 
 if __name__ == "__main__":
