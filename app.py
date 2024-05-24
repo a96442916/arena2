@@ -219,8 +219,9 @@ def show_results(folder: str):
         hide_index=True,
         use_container_width=True,
         column_config={
+            "Ranking": "",
             "Website": st.column_config.LinkColumn(display_text="Link"),
-            "Icon": st.column_config.ImageColumn(width="small"),
+            "Icon": st.column_config.ImageColumn(label="", width="small"),
         },
     )
 
