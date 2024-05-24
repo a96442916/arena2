@@ -8,12 +8,12 @@ claude-3-haiku-20240307,Anthropic,https://docs.anthropic.com/en/docs/models-over
 zero-one-ai/Yi-34B-Chat,01.AI,https://huggingface.co/01-ai/Yi-34B-Chat,assets/yi.svg
 meta-llama/Llama-2-70b-chat-hf,Meta,https://huggingface.co/meta-llama/Llama-2-70b-chat-hf,assets/meta.png
 meta-llama/Llama-3-70b-chat-hf,Meta,https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct,assets/meta.png
-mistralai/Mixtral-8x7B-Instruct-v0.1,Mistral,https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1,assets/mistral.jpg
-mistral-large-2402,Mistral,https://docs.mistral.ai/getting-started/models/,assets/mistral.jpg
-Qwen/Qwen1.5-72B-Chat,Alibaba Cloud,https://huggingface.co/Qwen/Qwen1.5-72B-Chat,assets/qwen.webp
+mistralai/Mixtral-8x7B-Instruct-v0.1,Mistral,https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1,assets/mistral.png
+mistral-large-2402,Mistral,https://docs.mistral.ai/getting-started/models/,assets/mistral.png
+Qwen/Qwen1.5-72B-Chat,Alibaba Cloud,https://huggingface.co/Qwen/Qwen1.5-72B-Chat,assets/alibaba.jpg
 deepseek-ai/deepseek-llm-67b-chat,Deepseek AI,https://huggingface.co/deepseek-ai/deepseek-llm-67b-chat,assets/deepseek.png
 glm-4,Zhipu AI,https://open.bigmodel.cn/dev/howuse/glm-4,assets/zhipu.png
-wenxin-4,Baidu,https://cloud.baidu.com/doc/WENXINWORKSHOP/s/clntwmv7t,assets/wenxin.png
+wenxin-4,Baidu,https://cloud.baidu.com/doc/WENXINWORKSHOP/s/clntwmv7t,assets/baidu.png
 minimax-abab6.5-chat,Minimax,https://www.minimaxi.com/document/algorithm-concept?id=6433f37594878d408fc8295d,assets/minimax.png
 SenseChat-5,SenseTime,https://platform.sensenova.cn/doc?path=/model/llm/GeneralLLM.md,assets/sensetime.png
 reka-core-20240501,Reka AI,https://www.reka.ai/news/reka-core-our-frontier-class-multimodal-language-model,assets/reka.jpeg
