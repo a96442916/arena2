@@ -223,9 +223,10 @@ def show_results(folder: str):
     data.insert(1, "Organization", data["Model"].map(info.get_organization))
     data.insert(3, "Website", data["Model"].map(info.get_website))
     data.insert(1, "Icon", data["Model"].map(info.get_icon))
+    data["Model"] = data["Model"].apply(lambda x: x.split("/")[-1])
 
     st.dataframe(
-        data,
+        data[["Ranking", "Icon", "Model", "Organization", "Website", "ELO Score"]],
         hide_index=True,
         use_container_width=True,
         column_config={
