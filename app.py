@@ -266,7 +266,7 @@ def show_links():
 
 
 def main():
-    st.header("🏆 Arena Leaderboard")
+    st.header("🏆 Auto Chatbot Arena")
     show_links()
     language = st.selectbox("Evaluation Language", ["English", "Chinese"])
     folder = "data/main_tour_40" if language == "English" else "data/main_tour_40_zh"
