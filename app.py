@@ -245,13 +245,13 @@ def show_about():
 
 
 def show_links():
-    columns = st.columns(7)
-    columns[0].link_button("Blog", url="")
-    columns[1].link_button("Paper", url="")
-    columns[2].link_button("Github", url="")
-    columns[3].link_button("Dataset", url="")
-    columns[4].link_button("Twitter", url="")
-    columns[5].link_button("Discord", url="")
+    buttons_info = [
+        dict(label="Blog", url=""),
+        dict(label="Paper", url=""),
+        dict(label="Github", url=""),
+    ]
+    for i, column in enumerate(st.columns(len(buttons_info))):
+        column.link_button(**buttons_info[i], use_container_width=True)
 
 
 def main():
