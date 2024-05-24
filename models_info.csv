@@ -11,7 +11,6 @@ meta-llama/Llama-3-70b-chat-hf,Meta,https://huggingface.co/meta-llama/Meta-Llama
 mistralai/Mixtral-8x7B-Instruct-v0.1,Mistral,https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1,assets/mistral.jpg
 mistral-large-2402,Mistral,https://docs.mistral.ai/getting-started/models/,assets/mistral.jpg
 Qwen/Qwen1.5-72B-Chat,Alibaba Cloud,https://huggingface.co/Qwen/Qwen1.5-72B-Chat,assets/qwen.webp
-qwen-max-0428,Alibaba Cloud,https://help.aliyun.com/zh/dashscope/developer-reference/api-details,assets/qwen.webp
 deepseek-ai/deepseek-llm-67b-chat,Deepseek AI,https://huggingface.co/deepseek-ai/deepseek-llm-67b-chat,assets/deepseek.png
 glm-4,Zhipu AI,https://open.bigmodel.cn/dev/howuse/glm-4,assets/zhipu.png
 wenxin-4,Baidu,https://cloud.baidu.com/doc/WENXINWORKSHOP/s/clntwmv7t,assets/wenxin.png

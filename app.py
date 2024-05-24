@@ -120,8 +120,8 @@ def show_debates(folder: str):
     info = ModelsInfo()
     paths = sorted(Path(folder).glob("round*/*debate_history.jsonl"))
     columns = st.columns(2)
-    model_a = columns[0].selectbox("Model A", find_models(paths, info))
-    model_b = columns[1].selectbox("Model B", find_opponents(model_a, paths, info))
+    model_a = columns[0].selectbox("Model", find_models(paths, info))
+    model_b = columns[1].selectbox("Opponent", find_opponents(model_a, paths, info))
     debate_file = find_debate_file(model_a, model_b, paths)
     data = load_debates_and_judgements(str(debate_file))
 
@@ -207,6 +207,7 @@ def show_results(folder: str):
     data.columns = ["Model", "ELO Score"]
 
     info = ModelsInfo()
+    data = data[data["Model"].isin(info.get_model_names())]
     data[data.columns[-1]] = data[data.columns[-1]].round()
     data = data.sort_values(by=data.columns[-1], ascending=False)
     data.insert(0, "Ranking", [i + 1 for i in range(data.shape[0])])
