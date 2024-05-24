@@ -125,26 +125,28 @@ def show_debates(folder: str):
     debate_file = find_debate_file(model_a, model_b, paths)
     data = load_debates_and_judgements(str(debate_file))
 
-    info_link = (
-        "https://static-00.iconduck.com/assets.00/info-icon-2048x2048-tcgtx810.png"
-    )
-
     debate, judgements = st.selectbox(
         "Debate Question",
         options=data,
         format_func=lambda s: f"{s[0]['question']['domain'].capitalize()}: {s[0]['question']['question']}",
     )
     candidates = debate["candidates"]
-    with st.chat_message("human"):
+    with st.chat_message("assistant", avatar="user"):
         st.write(debate["question"]["question"])
 
     for i, debate_round in enumerate(debate["rounds"]):
         with st.expander(f"Round {i + 1}"):
             for j, (key, turn) in enumerate(debate_round):
                 model = dict(a=candidates[0], b=candidates[1])[key]
-                with st.chat_message("human", avatar=info_link):
-                    st.write(f"Turn {j + 1}: {model}")
-                with st.chat_message("assistant"):
+                if j % 2 == 0:
+                    role = "user"
+                    col = st.columns([0.9, 0.1])[0]
+                else:
+                    role = "user"
+                    col = st.columns([0.1, 0.9])[1]
+
+                with col.chat_message(role, avatar=info.get_icon(model)):
+                    st.link_button(model, info.get_website(model))
                     st.write(turn["original"])
 
     judge = st.selectbox("Judge", options=judgements["judges"])
@@ -265,9 +267,6 @@ def main():
         show_debates(folder)
     with tabs[2]:
         show_about()
-
-    # For chat message style, show a left-right style between two bots
-    # Indicate for each round, which is A and which is B (also best if left-right chat style)
 
 
 if __name__ == "__main__":
