@@ -127,6 +127,7 @@ def show_debates(folder: str):
 
     debate, judgements = st.selectbox(
         "Debate Question",
+        key=model_a + "_" + model_b,  # This forces the widget and below to update
         options=data,
         format_func=lambda s: f"{s[0]['question']['domain'].capitalize()}: {s[0]['question']['question']}",
     )
