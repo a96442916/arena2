@@ -180,19 +180,15 @@ def get_latest_elo_file(folder: str) -> str:
 
 def show_html_table(data: pd.DataFrame):
     data = data.copy(deep=True)
-    data["Organization"] = data.apply(
-        lambda row: f'<img class="rounded-icon" src="{row["Icon"]}"/> {row["Organization"]}',
-        axis=1,
-    )
     data["Model"] = data.apply(
-        lambda row: f'<a href="{row["Website"]}">{row["Model"]}</a>',
+        lambda row: f'<img class="rounded-icon" src="{row["Icon"]}"/> {row["Organization"]}: <a href="{row["Website"]}">{row["Model"]}</a>',
         axis=1,
     )
     data["Score"] = data["ELO Score"].apply(round)
     data["Rank"] = data["Ranking"]
 
     raw = data.to_html(
-        columns=["Rank", "Organization", "Model", "Score"],
+        columns=["Rank", "Model", "Score"],
         justify="left",
         index=False,
         escape=False,
