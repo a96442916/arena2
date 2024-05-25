@@ -195,35 +195,42 @@ def show_html_table(data: pd.DataFrame):
         render_links=True,
     )
 
-    style = """
+    height_setting = """
+    height: 400px;
+    overflow-y: auto;
+    border-radius: 15px; /* Add this line to make the container a rounded rectangle */
+    border: 1px solid #dddddd; /* Optional: Add a border to the container */
+    """
+
+    if st.sidebar.toggle("Show Full Results Table"):
+        height_setting = ""
+
+    style = f"""
     <style>
-    a {
+    a {{
         text-decoration: none; /* Remove underline from hyperlinks */
-    }
-    .rounded-icon {
+    }}
+    .rounded-icon {{
         border-radius: 8px; /* Adjust this value to change the roundness of the corners */
         width: 28px;
         margin-right: 10px;
-    }
-    table {
+    }}
+    table {{
         width: 100%;
         font-size: 14px; /* Set the desired font size for the table */
         border: collapse;
-    }
-    th {
+    }}
+    th {{
         background-color: #f0f2f6;
         font-weight: normal; /* Add this line to avoid bolding */
-    }
-    tr:nth-child(even) {
+    }}
+    tr:nth-child(even) {{
         background-color: #f8f9fb;
-    }
-    .table-container {
-        height: 400px; /* Set your desired height */
-        overflow-y: auto;
-        border-radius: 15px; /* Add this line to make the container a rounded rectangle */
-        border: 1px solid #dddddd; /* Optional: Add a border to the container */
+    }}
+    .table-container {{
+        {height_setting}
         margin-bottom: 30px; /* Add bottom margin to the container */
-    }
+    }}
     </style>
     """
 
@@ -299,8 +306,9 @@ def show_links():
         column.link_button(**buttons_info[i], use_container_width=True)
 
 
-def main():
-    st.header("🏆 Auto Chatbot Arena")
+def main(title: str = "🏆 Auto Chatbot Arena"):
+    st.set_page_config(page_title=title, initial_sidebar_state="collapsed")
+    st.header(title)
     show_links()
     language = st.selectbox("Evaluation Language", ["English", "Chinese"])
     folder = "data/main_tour_40" if language == "English" else "data/main_tour_40_zh"
