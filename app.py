@@ -181,30 +181,64 @@ def get_latest_elo_file(folder: str) -> str:
 def show_html_table(data: pd.DataFrame):
     data = data.copy(deep=True)
     data["Organization"] = data.apply(
-        lambda row: f'<img src="{row["Icon"]}" width="24"/> {row["Organization"]}',
+        lambda row: f'<img class="rounded-icon" src="{row["Icon"]}"/> {row["Organization"]}',
         axis=1,
     )
     data["Model"] = data.apply(
         lambda row: f'<a href="{row["Website"]}">{row["Model"]}</a>',
         axis=1,
     )
+    data["Score"] = data["ELO Score"].apply(round)
+    data["Rank"] = data["Ranking"]
 
     raw = data.to_html(
-        columns=["Ranking", "Organization", "Model", "ELO Score"],
+        columns=["Rank", "Organization", "Model", "Score"],
         justify="left",
         index=False,
         escape=False,
         render_links=True,
     )
 
+    style = """
+    <style>
+    a {
+        text-decoration: none; /* Remove underline from hyperlinks */
+    }
+    .rounded-icon {
+        border-radius: 8px; /* Adjust this value to change the roundness of the corners */
+        width: 28px;
+        margin-right: 10px;
+    }
+    table {
+        width: 100%;
+        font-size: 14px; /* Set the desired font size for the table */
+        border: collapse;
+    }
+    th {
+        background-color: #f0f2f6;
+        font-weight: normal; /* Add this line to avoid bolding */
+    }
+    tr:nth-child(even) {
+        background-color: #f8f9fb;
+    }
+    .table-container {
+        height: 400px; /* Set your desired height */
+        overflow-y: auto;
+        border-radius: 15px; /* Add this line to make the container a rounded rectangle */
+        border: 1px solid #dddddd; /* Optional: Add a border to the container */
+        margin-bottom: 30px; /* Add bottom margin to the container */
+    }
+    </style>
+    """
+
     content = f"""
-    <div style="height:400px; overflow:auto;">
+    <div class="table-container">
         {raw}
     </div>
     """
 
+    st.write(style, unsafe_allow_html=True)
     st.write(content, unsafe_allow_html=True)
-    st.divider()
 
 
 def show_results(folder: str):
@@ -226,16 +260,18 @@ def show_results(folder: str):
     data.insert(1, "Icon", data["Model"].map(info.get_icon))
     data["Model"] = data["Model"].apply(lambda x: x.split("/")[-1])
 
-    st.dataframe(
-        data[["Ranking", "Icon", "Model", "Organization", "Website", "ELO Score"]],
-        hide_index=True,
-        use_container_width=True,
-        column_config={
-            "Ranking": "",
-            "Website": st.column_config.LinkColumn(display_text="Link"),
-            "Icon": st.column_config.ImageColumn(label="", width="small"),
-        },
-    )
+    show_html_table(data)
+
+    # st.dataframe(
+    #     data[["Ranking", "Icon", "Model", "Organization", "Website", "ELO Score"]],
+    #     hide_index=True,
+    #     use_container_width=True,
+    #     column_config={
+    #         "Ranking": "",
+    #         "Website": st.column_config.LinkColumn(display_text="Link"),
+    #         "Icon": st.column_config.ImageColumn(label="", width="small"),
+    #     },
+    # )
 
     chart = (
         altair.Chart(data)
