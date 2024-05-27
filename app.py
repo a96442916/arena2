@@ -180,6 +180,19 @@ def get_latest_elo_file(folder: str) -> str:
 
 def show_html_table(data: pd.DataFrame):
     data = data.copy(deep=True)
+
+    is_chinese_table = st.sidebar.toggle("Show Chinese Table")
+    if is_chinese_table:
+        mapping = {
+            "Zhipu AI": "智谱 AI",
+            "Alibaba Cloud": "阿里云",
+            "SenseTime": "商汤",
+            "Baidu": "百度",
+            "01.AI": "零一万物",
+            "Deepseek AI": "深度求索",
+        }
+        data["Organization"] = data["Organization"].apply(lambda x: mapping.get(x, x))
+
     data["Model"] = data.apply(
         lambda row: f'<img class="rounded-icon" src="{row["Icon"]}"/> {row["Organization"]}: <a href="{row["Website"]}">{row["Model"]}</a>',
         axis=1,
@@ -239,6 +252,11 @@ def show_html_table(data: pd.DataFrame):
         {raw}
     </div>
     """
+
+    if is_chinese_table:
+        content = content.replace("<th>Rank</th>", "<th>排名</th>")
+        content = content.replace("<th>Model</th>", "<th>模型</th>")
+        content = content.replace("<th>Score</th>", "<th>评分</th>")
 
     st.write(style, unsafe_allow_html=True)
     st.write(content, unsafe_allow_html=True)
