@@ -46,6 +46,26 @@ class ModelsInfo(BaseModel):
 
             return f"data:{mime_type};base64,{encoded_data}"
 
+    def get_opensource_icon(self, model_name: str) -> str:
+        # Streamlit requires the data url eg "data:image/png;base64,iVBO..."
+        self.load()
+        path = self.info[model_name]["OpenSource"]
+        if not Path(str(path)).exists():
+            return ""
+
+        with open(path, "rb") as f:
+            image_data = f.read()
+            encoded_data = base64.b64encode(image_data).decode("utf-8")
+            mime_type = {
+                ".png": "image/png",
+                ".jpg": "image/jpeg",
+                ".jpeg": "image/jpeg",
+                ".webp": "image/webp",
+                ".svg": "image/svg+xml",
+            }[Path(path).suffix]
+
+            return f"data:{mime_type};base64,{encoded_data}"
+
     def get_model_names(self) -> List[str]:
         self.load()
         return sorted(self.info.keys())
@@ -178,6 +198,17 @@ def get_latest_elo_file(folder: str) -> str:
     raise ValueError
 
 
+def format_model_info(raw: dict) -> str:
+    icon = f'<img class="rounded-icon" src="{raw["Icon"]}"/>'
+    model = f'<a href="{raw["Website"]}">{raw["Model"]}</a>'
+
+    open_source = f'<a href="https://opensource.org"> <img class="open-source-icon" src="{raw["OpenSource"]}" title="Open Source"/> </a>'
+    if raw["OpenSource"] == "":
+        open_source = ""
+
+    return f'{icon} {raw["Organization"]}: {model} {open_source}'
+
+
 def show_html_table(data: pd.DataFrame):
     data = data.copy(deep=True)
 
@@ -193,10 +224,7 @@ def show_html_table(data: pd.DataFrame):
         }
         data["Organization"] = data["Organization"].apply(lambda x: mapping.get(x, x))
 
-    data["Model"] = data.apply(
-        lambda row: f'<img class="rounded-icon" src="{row["Icon"]}"/> {row["Organization"]}: <a href="{row["Website"]}">{row["Model"]}</a>',
-        axis=1,
-    )
+    data["Model"] = data.apply(format_model_info, axis=1)
     data["Score"] = data["ELO Score"].apply(round)
     data["Rank"] = data["Ranking"]
 
@@ -227,6 +255,10 @@ def show_html_table(data: pd.DataFrame):
         border-radius: 8px; /* Adjust this value to change the roundness of the corners */
         width: 28px;
         margin-right: 10px;
+    }}
+    .open-source-icon {{
+        width: 20px;
+        margin-left: 10px;
     }}
     table {{
         width: 100%;
@@ -279,6 +311,7 @@ def show_results(folder: str):
     data.insert(1, "Organization", data["Model"].map(info.get_organization))
     data.insert(3, "Website", data["Model"].map(info.get_website))
     data.insert(1, "Icon", data["Model"].map(info.get_icon))
+    data.insert(0, "OpenSource", data["Model"].map(info.get_opensource_icon))
     data["Model"] = data["Model"].apply(lambda x: x.split("/")[-1])
 
     show_html_table(data)
