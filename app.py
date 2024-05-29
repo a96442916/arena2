@@ -314,6 +314,21 @@ def show_results(folder: str):
     data.insert(0, "OpenSource", data["Model"].map(info.get_opensource_icon))
     data["Model"] = data["Model"].apply(lambda x: x.split("/")[-1])
 
+    # Search and filters
+    columns = st.columns(2)
+    search_name = columns[0].text_input("Search for your model")
+    if search_name:
+        data = data[data["Model"].str.contains(search_name, case=False, na=False)]
+    tags = columns[1].multiselect(
+        "Open-source or closed-source models?",
+        options=["Open", "Closed"],
+        default=["Open", "Closed"],
+    )
+    if tags == ["Open"]:
+        data = data[data["OpenSource"] != ""]
+    if tags == ["Closed"]:
+        data = data[data["OpenSource"] == ""]
+
     show_html_table(data)
 
     # st.dataframe(
@@ -358,7 +373,9 @@ def show_links():
 
 
 def main(title: str = "🏆 Auto Chatbot Arena"):
-    st.set_page_config(page_title=title, initial_sidebar_state="collapsed")
+    st.set_page_config(
+        page_title=title, initial_sidebar_state="collapsed", layout="wide"
+    )
     st.header(title)
     show_links()
     language = st.selectbox("Evaluation Language", ["English", "Chinese"])
