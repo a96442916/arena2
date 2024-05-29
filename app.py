@@ -372,7 +372,7 @@ def show_links():
         column.link_button(**buttons_info[i], use_container_width=True)
 
 
-def main(title: str = "🏆 Auto Chatbot Arena"):
+def main(title: str = "🏆 Auto Arena of LLMs"):
     st.set_page_config(
         page_title=title, initial_sidebar_state="collapsed", layout="wide"
     )
