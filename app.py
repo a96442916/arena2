@@ -377,6 +377,10 @@ def show_links():
         column.link_button(**buttons_info[i], use_container_width=True)
 
 
+def show_logo(path: str):
+    st.columns(9)[4].image(path)
+
+
 def main(title: str = "🏆 Auto Arena of LLMs"):
     st.set_page_config(
         page_title=title, initial_sidebar_state="collapsed", layout="wide"
@@ -389,6 +393,7 @@ def main(title: str = "🏆 Auto Arena of LLMs"):
     with tabs[0]:
         # st.write(intro)
         # show_results(folder)
+        show_logo("assets/logo.png")
         components.iframe("https://auto-arena-leaderboard.hf.space", height=1000)
     with tabs[1]:
         language = st.selectbox("Evaluation Language", ["English", "Chinese"])
