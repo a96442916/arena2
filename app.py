@@ -8,6 +8,8 @@ import pandas as pd
 import streamlit as st
 from pydantic import BaseModel
 
+import streamlit.components.v1 as components
+
 
 class ModelsInfo(BaseModel):
     path: str = "models_info.csv"
@@ -364,9 +366,9 @@ def show_about():
 
 def show_links():
     buttons_info = [
-        dict(label="Blog", url=""),
-        dict(label="Paper", url=""),
-        dict(label="Github", url=""),
+        dict(label="Blog (Coming Soon)", url=""),
+        dict(label="Paper", url="https://arxiv.org/abs/2405.20267"),
+        dict(label="Github (Coming Soon)", url=""),
     ]
     for i, column in enumerate(st.columns(len(buttons_info))):
         column.link_button(**buttons_info[i], use_container_width=True)
@@ -376,17 +378,20 @@ def main(title: str = "🏆 Auto Arena of LLMs"):
     st.set_page_config(
         page_title=title, initial_sidebar_state="collapsed", layout="wide"
     )
-    st.header(title)
+    # st.header(title)
     show_links()
-    language = st.selectbox("Evaluation Language", ["English", "Chinese"])
-    folder = "data/main_tour_40" if language == "English" else "data/main_tour_40_zh"
     tabs = st.tabs(["Leaderboard Results", "Debate Samples", "About Us"])
-    intro = "We introduce the Auto Chatbot Arena, an automated and reliable framework for evaluating large language models in a human-like manner. We generate diverse and challenging questions across various domains, including writing, reasoning, and knowledge. During the debate battle stage, two models take turns answering questions and responding to each other's arguments, showcasing their deeper capabilities. Finally, a committee of the top-performing models is formed to review the debate process and judge the final winner through multi-round discussions. Below, we present our leaderboard of popular models:"
+    # intro = "We introduce the Auto Chatbot Arena, an automated and reliable framework for evaluating large language models in a human-like manner. We generate diverse and challenging questions across various domains, including writing, reasoning, and knowledge. During the debate battle stage, two models take turns answering questions and responding to each other's arguments, showcasing their deeper capabilities. Finally, a committee of the top-performing models is formed to review the debate process and judge the final winner through multi-round discussions. Below, we present our leaderboard of popular models:"
 
     with tabs[0]:
-        st.write(intro)
-        show_results(folder)
+        # st.write(intro)
+        # show_results(folder)
+        components.iframe("https://auto-arena-leaderboard.hf.space", height=1000)
     with tabs[1]:
+        language = st.selectbox("Evaluation Language", ["English", "Chinese"])
+        folder = (
+            "data/main_tour_40" if language == "English" else "data/main_tour_40_zh"
+        )
         show_debates(folder)
     with tabs[2]:
         show_about()
