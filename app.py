@@ -366,9 +366,12 @@ def show_about():
 
 def show_links():
     buttons_info = [
-        dict(label="Blog (Coming Soon)", url=""),
+        dict(
+            label="Blog",
+            url="https://github.com/RuochenZhao/LLM_eval/blob/main/blog_post.md",
+        ),
         dict(label="Paper", url="https://arxiv.org/abs/2405.20267"),
-        dict(label="Github (Coming Soon)", url=""),
+        dict(label="Github", url="https://github.com/Auto-Arena/Auto-Arena-LLMs"),
     ]
     for i, column in enumerate(st.columns(len(buttons_info))):
         column.link_button(**buttons_info[i], use_container_width=True)
