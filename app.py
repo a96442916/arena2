@@ -366,10 +366,7 @@ def show_about():
 
 def show_links():
     buttons_info = [
-        dict(
-            label="Blog",
-            url="https://github.com/RuochenZhao/LLM_eval/blob/main/blog_post.md",
-        ),
+        dict(label="Blog", url="https://auto-arena.github.io/blog"),
         dict(label="Paper", url="https://arxiv.org/abs/2405.20267"),
         dict(label="Github", url="https://github.com/Auto-Arena/Auto-Arena-LLMs"),
     ]
