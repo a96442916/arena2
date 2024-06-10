@@ -361,7 +361,8 @@ def show_results(folder: str):
 
 
 def show_about():
-    st.write("This is an Auto Chatbot Arena from Alibaba DAMO Academy.")
+    text = "This is a research work from Alibaba DAMO Academy. We are open to collaborations! If you don’t see your model on the leaderboard and hope to include it, all you need to do is providing an API key and reaching out to us at: zrc.esther@gmail.com, l.bing@alibaba-inc.com, saike.zwx@alibaba-inc.com. We will also regularly maintain the leaderboard by adding mainstream popular models and altering the peer-battle questions to prevent data contamination."
+    st.write(text)
 
 
 def show_links():
