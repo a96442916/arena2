@@ -385,20 +385,18 @@ def main(title: str = "🏆 Auto Arena of LLMs"):
     )
     # st.header(title)
     show_links()
-    tabs = st.tabs(["Leaderboard Results", "Debate Samples", "About Us"])
-    # intro = "We introduce the Auto Chatbot Arena, an automated and reliable framework for evaluating large language models in a human-like manner. We generate diverse and challenging questions across various domains, including writing, reasoning, and knowledge. During the debate battle stage, two models take turns answering questions and responding to each other's arguments, showcasing their deeper capabilities. Finally, a committee of the top-performing models is formed to review the debate process and judge the final winner through multi-round discussions. Below, we present our leaderboard of popular models:"
+    tabs = st.tabs(["Debate Samples", "Leaderboard Results", "About Us"])
+    intro = "We introduce the Auto Chatbot Arena, an automated and reliable framework for evaluating large language models in a human-like manner. We generate diverse and challenging questions across various domains, including writing, reasoning, and knowledge. During the debate battle stage, two models take turns answering questions and responding to each other's arguments, showcasing their deeper capabilities. Finally, a committee of the top-performing models is formed to review the debate process and judge the final winner through multi-round discussions. Below, we present our leaderboard of popular models:"
+    language = st.selectbox("Evaluation Language", ["English", "Chinese"])
+    folder = "data/main_tour_40" if language == "English" else "data/main_tour_40_zh"
 
     with tabs[0]:
-        # st.write(intro)
-        # show_results(folder)
-        show_logo("assets/logo.png")
-        components.iframe("https://auto-arena-leaderboard.hf.space", height=1000)
-    with tabs[1]:
-        language = st.selectbox("Evaluation Language", ["English", "Chinese"])
-        folder = (
-            "data/main_tour_40" if language == "English" else "data/main_tour_40_zh"
-        )
         show_debates(folder)
+    with tabs[1]:
+        st.write(intro)
+        show_results(folder)
+        # show_logo("assets/logo.png")
+        # components.iframe("https://auto-arena-leaderboard.hf.space", height=1000)
     with tabs[2]:
         show_about()
 
