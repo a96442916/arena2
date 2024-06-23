@@ -1,5 +1,7 @@
 import base64
 import json
+import re
+from collections import Counter
 from pathlib import Path
 from typing import List, Dict
 
@@ -7,8 +9,6 @@ import altair
 import pandas as pd
 import streamlit as st
 from pydantic import BaseModel
-
-import streamlit.components.v1 as components
 
 
 class ModelsInfo(BaseModel):
@@ -138,6 +138,16 @@ def find_debate_file(model_a: str, model_b: str, paths: List[Path]) -> Path:
                 return p
 
 
+def show_win_rate(path: str):
+    judgements = []
+    data = load_debates_and_judgements(path, num_per_domain=99)
+    for debate, judge in data:
+        candidates = debate["candidates"]
+        mapping = dict(A=candidates[0], B=candidates[1], tie="Tie", error="Error")
+        judgements.append(mapping[judge["final_winner"][-1]])
+    st.write(Counter(judgements))
+
+
 def show_debates(folder: str):
     info = ModelsInfo()
     paths = sorted(Path(folder).glob("round*/*debate_history.jsonl"))
@@ -146,6 +156,7 @@ def show_debates(folder: str):
     model_b = columns[1].selectbox("Opponent", find_opponents(model_a, paths, info))
     debate_file = find_debate_file(model_a, model_b, paths)
     data = load_debates_and_judgements(str(debate_file))
+    # show_win_rate(str(debate_file))
 
     debate, judgements = st.selectbox(
         "Debate Question",
@@ -193,11 +204,17 @@ def show_debates(folder: str):
 
 
 def get_latest_elo_file(folder: str) -> str:
-    num_rounds = len(sorted(Path(folder).glob("round*")))
+    num = 0
+    path = ""
     for p in sorted(Path(folder).iterdir()):
-        if p.name.startswith(f"round{num_rounds}"):
-            return str(Path(p, "elo_history.csv"))
-    raise ValueError
+        pattern = r"round(\d+)"
+        match = re.search(pattern, p.name)
+        if match and int(match.group(1)) > num:
+            num = int(match.group(1))
+            path = str(p)
+
+    assert path
+    return str(Path(path, "elo_history.csv"))
 
 
 def format_model_info(raw: dict) -> str:
