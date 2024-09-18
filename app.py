@@ -403,7 +403,7 @@ def main(title: str = "🏆 Auto Arena of LLMs"):
     # st.header(title)
     # show_links()
     language = st.selectbox("Evaluation Language", ["English", "Chinese"])
-    tabs = st.tabs(["Debate Samples", "Leaderboard Results", "About Us"])
+    tabs = st.tabs(["Debate Samples", "Leaderboard Results"])
     intro = "We introduce the Auto Chatbot Arena, an automated and reliable framework for evaluating large language models in a human-like manner. We generate diverse and challenging questions across various domains, including writing, reasoning, and knowledge. During the debate battle stage, two models take turns answering questions and responding to each other's arguments, showcasing their deeper capabilities. Finally, a committee of the top-performing models is formed to review the debate process and judge the final winner through multi-round discussions. Below, we present our leaderboard of popular models:"
     folder = "data/main_tour_40" if language == "English" else "data/main_tour_40_zh"
 
