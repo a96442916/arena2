@@ -378,7 +378,7 @@ def show_results(folder: str):
 
 
 def show_about():
-    text = "This is a research work from Alibaba DAMO Academy. We are open to collaborations! If you don’t see your model on the leaderboard and hope to include it, all you need to do is providing an API key and reaching out to us at: zrc.esther@gmail.com, l.bing@alibaba-inc.com, saike.zwx@alibaba-inc.com. We will also regularly maintain the leaderboard by adding mainstream popular models and altering the peer-battle questions to prevent data contamination."
+    text = "This is a research work from ..."
     st.write(text)
 
 
@@ -414,8 +414,8 @@ def main(title: str = "🏆 Auto Arena of LLMs"):
         show_results(folder)
         # show_logo("assets/logo.png")
         # components.iframe("https://auto-arena-leaderboard.hf.space", height=1000)
-    with tabs[2]:
-        show_about()
+    # with tabs[2]:
+    #     show_about()
 
 
 if __name__ == "__main__":
