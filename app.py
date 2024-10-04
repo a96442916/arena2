@@ -92,12 +92,11 @@ def load_debates_and_judgements(
 ) -> List[tuple]:
     with open(debate_file) as f:
         records = [json.loads(line) for line in f]
-        debates = {str(raw["gamekey"]): raw for raw in records}
+        debates = {str(raw["gamekey"][0]): raw for raw in records}
     with open(debate_file.replace("debate_history", "judge_results")) as f:
         records = [json.loads(line) for line in f]
-        judgements = {str(raw["gamekey"]): raw for raw in records}
-    assert [a[0] for a in debates.keys()] == [a[0] for a in judgements.keys()]
-    # assert debates.keys() == judgements.keys()
+        judgements = {str(raw["gamekey"][0]): raw for raw in records}
+    assert debates.keys() == judgements.keys()
 
     counts = {}
     outputs = []
