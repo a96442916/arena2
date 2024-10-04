@@ -8,6 +8,7 @@ claude-3-haiku-20240307,Anthropic,https://docs.anthropic.com/en/docs/models-over
 claude-3-5-sonnet-20240620,Anthropic,https://docs.anthropic.com/en/docs/models-overview,assets/claude.webp,
 zero-one-ai/Yi-34B-Chat,01.AI,https://huggingface.co/01-ai/Yi-34B-Chat,assets/yi.svg,assets/open-source.svg
 meta-llama/Llama-2-70b-chat-hf,Meta,https://huggingface.co/meta-llama/Llama-2-70b-chat-hf,assets/meta.png,assets/open-source.svg
+meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo,Meta,https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct,,
 meta-llama/Llama-3-70b-chat-hf,Meta,https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct,assets/meta.png,assets/open-source.svg
 mistralai/Mixtral-8x7B-Instruct-v0.1,Mistral,https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1,assets/mistral.png,assets/open-source.svg
 mistral-large-2402,Mistral,https://docs.mistral.ai/getting-started/models/,assets/mistral.png,
@@ -20,3 +21,5 @@ minimax-abab6.5-chat,Minimax,https://www.minimaxi.com/document/algorithm-concept
 SenseChat-5,SenseTime,https://platform.sensenova.cn/doc?path=/model/llm/GeneralLLM.md,assets/sensetime.png,
 reka-core-20240501,Reka AI,https://www.reka.ai/news/reka-core-our-frontier-class-multimodal-language-model,assets/reka.jpeg,
 command-r-plus,Cohere,https://docs.cohere.com/docs/command-r-plus,assets/cohere.png,assets/open-source.svg
+google/gemma-2-27b-it,Google,https://huggingface.co/google/gemma-2-27b-it,assets/google.png,
+gemini-1.5-flash-exp-0827,Google,https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-flash,assets/google.png,
