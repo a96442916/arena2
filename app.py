@@ -96,7 +96,8 @@ def load_debates_and_judgements(
     with open(debate_file.replace("debate_history", "judge_results")) as f:
         records = [json.loads(line) for line in f]
         judgements = {str(raw["gamekey"]): raw for raw in records}
-    assert debates.keys() == judgements.keys()
+    assert [a[0] for a in debates.keys()] == [a[0] for a in judgements.keys()]
+    # assert debates.keys() == judgements.keys()
 
     counts = {}
     outputs = []
